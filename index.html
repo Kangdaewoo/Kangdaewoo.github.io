@@ -4,17 +4,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     </head>
     <body>
-        <a href="#" title="Get some foo!" id="foo">Show me some foo</a>
+        <a href="#" title="test_title" id="test_id">Send a request to the local server</a>
         <script>
-            var el = document.getElementById('foo');
-            el.onclick = showFoo;
+            var el = document.getElementById('test_id');
+            el.onclick = send_request;
 
 
-            function showFoo() {
+            function send_request() {
                 $.get(
                     "https://127.0.0.1:8000/",
                     function(data) {
-                        alert('page content: ' + data);
+                        alert('Local server responded: ' + data);
                     }
                 );
             }
