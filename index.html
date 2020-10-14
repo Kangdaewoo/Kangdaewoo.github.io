@@ -11,12 +11,19 @@
 
 
             function send_request() {
-                $.get(
-                    "https://127.0.0.1:8000/",
-                    function(data) {
-                        alert('Local server responded: ' + data);
+                $.ajax({
+                    type: "POST",
+                    url: "https://127.0.0.1:8000/",
+                    data: {
+                        "hello": "world"
+                    },
+                    headers: {
+                        "daewoo": "kang"
+                    },
+                    success: function(data) {
+                        console.log(data);
                     }
-                );
+                })
             }
         </script>
     </body>
